@@ -1,0 +1,163 @@
+@color: #fff;
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    body {
+        font-size: 12px;
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        background-position: center center;
+
+        .wrapper {
+            width: 100vw;
+            height: 100vh;
+            padding-top: 60px;
+            box-sizing: border-box;
+            background-color: rgba(0, 0, 0, .2);
+            text-align: center;
+
+            .song-img {
+                display: inline-block;
+                width: 70%;
+                height: 0;
+                padding-top: 70%; //padding基于父级的宽度
+                position: relative;
+
+                .img-box {
+                    box-shadow: 0 0 8px #000;
+                    background-color: #000;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    img {
+                        width: 75%;
+                        height: 75%;
+                        border-radius: 50%;
+                    }
+                }
+            }
+
+            .song-info {
+                width: 100%;
+                height: 126px;
+                // border: 1px solid #000;
+                color: @color;
+                padding-top: 10%;
+
+                .song-name {
+                    font-size: 24px;
+                    margin-bottom: 8px;
+                }
+            }
+
+            .pro {
+                display: flex;
+
+                .cur-time,
+                .all-time {
+                    width: 60px;
+                    height: 40px;
+                    line-height: 40px;
+                    color: @color;
+                    text-align: center;
+                }
+
+                .pro-wrap {
+                    flex: 1;
+                    position: relative;
+                    overflow: hidden;
+
+                    .pro-bottom,
+                    .pro-top {
+                        position: absolute;
+                        top: 20px;
+                        width: 100%;
+                        height: 1px;
+                        background-color: #fff;
+                    }
+
+                    .pro-bottom {
+                        background-color: rgba(0, 0, 0, .5);
+                    }
+
+                    .pro-top {
+                        transform: translateX(-100%);
+                        .spot {
+                            width: 20px;
+                            height: 20px;
+                            position: absolute;
+                            top: -10px;
+                            right: -20px;
+                            &::after{
+                                content: '';
+                                position: absolute;
+                                width: 6px;
+                                height: 6px;
+                                border-radius: 50%;
+                                background-color: #fff;
+                                top: 50%;
+                                left: 0;
+                                transform: translateY(-50%);
+                            }
+                        }
+                    }
+                }
+            }
+
+            .control {
+                width: 100%;
+                height: 60px;
+                position: absolute;
+                bottom: 0;
+                background-color: rgba(0, 0, 0, .6);
+                display: flex;
+
+                .btn {
+                    flex: 1;
+                    height: 100%;
+                    background-repeat: no-repeat;
+                    background-size: 20px;
+                    background-position: center center;
+                }
+
+                .like {
+                    background-image: url(./../img/icon-like.png);
+
+                    &.liking {
+                        background-image: url(./../img/icon-like-solid.png);
+                    }
+                }
+
+                .prev {
+                    background-image: url(./../img/icon-prev.png);
+                }
+
+                .play {
+                    background-image: url(./../img/icon-play.png);
+
+                    &.playing {
+                        background-image: url(./../img/icon-pause.png);
+                    }
+                }
+
+                .next {
+                    background-image: url(./../img/icon-next.png);
+                }
+
+                .list {
+                    background-image: url(./../img/icon-list.png);
+                }
+            }
+        }
+    }
+}
