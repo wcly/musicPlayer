@@ -9,7 +9,8 @@ var timer; //旋转定时器
  * 初始化函数
  */
 function init() {
-    getData('http://yapi.demo.qunar.com/mock/71675/music/data'); // 获取数据
+    // getData('http://yapi.demo.qunar.com/mock/71675/music/data'); // 获取数据
+    getData('../mock/data.json'); // 获取数据
     bindEvent(); //绑定事件
     bindTouch(); //绑定拖拽事件
 }
@@ -30,7 +31,6 @@ function getData(url) {
             root.render(dataList[i]); // 初始化渲染数据
             audio.getAudio(dataList[i].audio);
             $('body').trigger('play:change', 0);
-
         },
         error: function () {
             console.log("error");
